@@ -21,7 +21,7 @@ class handler(BaseHTTPRequestHandler):
             solution_accepted=txt1.split("Solutions submitted</dt>\n\t\t\t\t\t\t\t\t<dd>")[1].split("</dd>")[0]
             font_path = './data/font.ttf'
             font = ImageFont.truetype(font_path, 20)
-            img_size = (7*len(problem_sloved)+92, 28)
+            img_size = (20*len(problem_sloved)+92, 28)
             img_color = (255, 255, 255)
             img_text = f"AC: {problem_sloved} ; Solution: {solution_accepted}" 
             img = Image.new('RGB', img_size, img_color)
