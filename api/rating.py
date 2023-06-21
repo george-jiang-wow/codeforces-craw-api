@@ -20,13 +20,13 @@ class handler(BaseHTTPRequestHandler):
             problem_sloved=txt1.split("Problems solved</dt>\n\t\t\t\t\t\t\t\t<dd>")[1].split("</dd>")[0]
             solution_accepted=txt1.split("Solutions submitted</dt>\n\t\t\t\t\t\t\t\t<dd>")[1].split("</dd>")[0]
             font_path = './data/font.ttf'
-            font = ImageFont.truetype(font_path, 32)
-            img_size = (600, 400)
+            font = ImageFont.truetype(font_path, 4)
+            img_size = (600, 7*len(problem_sloved)+92)
             img_color = (255, 255, 255)
             img_text = f"AC: {problem_sloved} ; Solution: {solution_accepted}" 
             img = Image.new('RGB', img_size, img_color)
             draw = ImageDraw.Draw(img)
-            draw.text((50, 50), img_text, font=font, fill=(0, 0, 0))
+            draw.text((5, 5), img_text, font=font, fill=(0, 0, 0))
             buffered = io.BytesIO()
             img.save(buffered, format="JPEG")
             img_byte = buffered.getvalue()
