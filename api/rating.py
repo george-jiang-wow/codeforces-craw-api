@@ -23,7 +23,7 @@ class handler(BaseHTTPRequestHandler):
             font = ImageFont.truetype(font_path, 20)
             img_size = (20*len(problem_sloved)+92, 28)
             img_color = (255, 255, 255)
-            img_text = f"AC: {problem_sloved} ; Solution: {solution_accepted}" 
+            img_text = f"AC: {problem_sloved} ; Push: {solution_accepted}" 
             img = Image.new('RGB', img_size, img_color)
             draw = ImageDraw.Draw(img)
             draw.text((5, 5), img_text, font=font, fill=(0, 0, 0))
