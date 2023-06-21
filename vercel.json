@@ -1,0 +1,21 @@
+{
+  "functions": {
+    "api/*.py": {
+      "memory": 200,
+      "maxDuration": 2
+    }
+  },
+    "routes": [
+        {
+            "src": "/rating",
+            "dest": "/api/rating.py"
+        },
+        {
+            "src": "/",
+            "status": 302,
+            "headers": {
+                "Location": "https://github.com/george-jiang-wow/atcoder-rating"
+            }
+        }
+    ]
+}
