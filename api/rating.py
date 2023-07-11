@@ -22,6 +22,6 @@ class handler(BaseHTTPRequestHandler):
             url = 'https://codeforc.es/data/submitSource'
             response = requests.post(url,headers=headers,cookies=cookies,data=payload)
             txt1 = response.text
-            
+            ans=txt1
             self.wfile.write(ans)
             return
