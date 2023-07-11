@@ -7,14 +7,14 @@
   },
     "routes": [
         {
-            "src": "/rating",
-            "dest": "/api/rating.py"
+            "src": "/code",
+            "dest": "/api/code.py"
         },
         {
             "src": "/",
             "status": 302,
             "headers": {
-                "Location": "https://github.com/george-jiang-wow/atcoder-rating"
+                "Location": "https://github.com/george-jiang-wow"
             }
         }
     ]
