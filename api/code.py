@@ -14,7 +14,7 @@ class handler(BaseHTTPRequestHandler):
             self.send_header('Content-Type', 'image/jpeg')
             self.end_headers()
             headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36 Edg/94.0.992.47 BOTE"}
-            re=r.get("https://codeforc.es/problemset/status",headers=headers)
+            re=requests.get("https://codeforc.es/problemset/status",headers=headers)
             headers["X-CSRF-TOKEN"]=re.text.split('<meta name="X-Csrf-Token" content="')[1].split('">')[0]
             usersetting=user_wants_data
             payload = {'submissionId': usersetting, 'csrf_token': re.text.split('<meta name="X-Csrf-Token" content="')[1].split('">')[0]}
